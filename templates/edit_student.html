@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+{% block title %}Edit Student{% endblock %}
+{% block content %}
+<h2>Edit Student Details</h2>
+<form method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="text" name="name" value="{{ student.name }}" required>
+    <input type="email" name="email" value="{{ student.email }}" required>
+    <input type="text" name="course" value="{{ student.course }}" required>
+    <input type="tel" name="phone" value="{{ student.phone }}" required>
+    <button type="submit">Save Changes</button>
+</form>
+<p><a href="{{ url_for('students') }}">Back to Student Records</a></p>
+{% endblock %}

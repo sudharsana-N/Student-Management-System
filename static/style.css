@@ -1,0 +1,145 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f2f5fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container.wide {
+    max-width: 1100px;
+}
+
+h1 {
+    color: #263b64;
+    font-size: 25px;
+}
+
+h2 {
+    color: #526581;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+button, .button-link {
+    display: inline-block;
+    padding: 12px 18px;
+    margin: 10px 4px;
+    background: #315caa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover, .button-link:hover {
+    background: #244783;
+}
+
+a {
+    color: #315caa;
+    text-decoration: none;
+}
+
+.message {
+    background: #e9f5e9;
+    color: #236b35;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.stats {
+    background: #eef3fb;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.count {
+    font-size: 35px;
+    font-weight: bold;
+    color: #315caa;
+    margin: 5px;
+}
+
+.actions {
+    margin: 20px 0;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #315caa;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f2f5fa;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.delete-button {
+    background: #c0392b;
+    padding: 7px 10px;
+    margin: 4px;
+}
+
+.delete-button:hover {
+    background: #922b21;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 13px;
+    }
+}

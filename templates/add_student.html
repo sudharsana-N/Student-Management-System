@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+{% block title %}Add Student{% endblock %}
+{% block content %}
+<h2>Add New Student</h2>
+<form method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="text" name="name" placeholder="Student Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="course" placeholder="Course" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <button type="submit">Add Student</button>
+</form>
+<p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+{% endblock %}
