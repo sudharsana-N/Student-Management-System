@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.git/
+.vscode/
+database/*.db
+screenshots/
+.pytest_cache/
