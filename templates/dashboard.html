@@ -1,22 +1,48 @@
 
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
+
 {% block content %}
+
 <h2>Welcome, {{ name }}!</h2>
 <p>You have successfully logged in.</p>
 
-<div class="stats">
-    <h3>Total Students</h3>
-    <p class="count">{{ total_students }}</p>
-</div>
+{% if role == 'admin' %}
 
-<div class="actions">
-    <a class="button-link" href="{{ url_for('add_student') }}">Add New Student</a>
-    <a class="button-link" href="{{ url_for('students') }}">View All Students</a>
-</div>
+    <h3>Admin Dashboard</h3>
+
+    <div class="stats">
+        <h3>Total Students</h3>
+        <p class="count">{{ total_students }}</p>
+    </div>
+
+    <div class="actions">
+        <a class="button-link" href="{{ url_for('add_student') }}">
+            Add New Student
+        </a>
+
+        <a class="button-link" href="{{ url_for('students') }}">
+            View All Students
+        </a>
+    </div>
+
+{% else %}
+
+    <h3>Student User Dashboard</h3>
+
+    <p>You have read-only access to student records.</p>
+
+    <div class="actions">
+        <a class="button-link" href="{{ url_for('students') }}">
+            View Students
+        </a>
+    </div>
+
+{% endif %}
 
 <form method="POST" action="{{ url_for('logout') }}">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <button type="submit">Logout</button>
 </form>
+
 {% endblock %}
